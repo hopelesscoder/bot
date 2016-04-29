@@ -190,9 +190,14 @@ def comando_start(bot, update):
 	#global bot1
 	#bot1= bot
 	
-def dado_4(bot, update):
+def dado_4(bot, update, args):
 	mittente = update.message.from_user.first_name
 	ris=random.randint(1,4)
+	
+	testo_add = " ".join(args)
+	if len(testo_add)>0:
+	 bot.sendMessage(update.message.chat_id, text = testo_add)	
+	
 	bot.sendMessage(update.message.chat_id, " %s il risultato del tuo lancio e' %s !\n" % (mittente, ris))	
 
 def dado_6(bot, update):
